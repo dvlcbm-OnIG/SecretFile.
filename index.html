@@ -4,19 +4,20 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>secretFile@dvlcbm</title>
+ <title>@dvlcbm</title>
  <style>
   body{
    background-color: #FFCFFB;
    margin: 0;
-   height: 900px;
-   overflow: hidden;
-  }
-  html{
-   overflow: hidden;
+   padding: 0;
+   height: 100vh;
+   
   }
   .container{
    text-align: center;
+   height: 100%;
+   overflow: hidden;
+  
   }
   h1{
    color:#F13363;
@@ -31,6 +32,7 @@
    border-radius: 5px;
    font-family: 'Nugie Romantic', cursive;
    font-size: 20px;
+   text-align: center;
    
   }
   #no{
@@ -64,9 +66,9 @@
 <body>
  <div class="container">
   <h1>Will you be my Valentine?</h1>
-  <img id="normal" src="normal.gif" alt=""><br>
-  <img id="happy" src="happy.gif" alt="">
-  <img id="crying" src="crying.gif" alt="">
+  <img id="normal" src="/Cute/gif.img/normal.gif" alt=""><br>
+  <img id="happy" src="/Cute/gif.img/happy.gif" alt="">
+  <img id="crying" src="/Cute/gif.img/crying.gif" alt="">
   <button id="yes">Yes</button>
   <button id="no">No</button>
  </div>
@@ -77,61 +79,71 @@
   const crying =document.getElementById('crying')
   const happy =document.getElementById('happy')
   const normal =document.getElementById('normal')
-  
-  let height = 25;
-  let width = 40;
-  let fonts = 20;
+  const body =document.querySelector('body')
+  let height = 10;
+  let width = 10;
+  let fonts = 1;
   let attempt = 0;
   
    
   
   no.addEventListener('click', function(){
    
-   if(width < 431){
-   width += 60;
+   if(width < 100){
+   width += 15;
    }
-    height += 70;
-    fonts += 15;
+    height += 10;
+    fonts += 1;
    
     switch (height){
-     case 95:
+     case 10:
       no.textContent ='are you sure?🤨';
       break;
-      case 165:
+      case 20:
        no.textContent ='are you really??😟';
        break;
-       case 235:
+       case 20:
         no.textContent ='no, please.!!🥲.';
        break;
-       case 305:
+       case 40:
         no.textContent ='jus once, please...🙏🙏';
        break;
-       case 375:
+       case 50:
         no.textContent ='I will be very sad...😖';
        break;
-       case 445:
+       case 60:
         no.textContent ="i'm gonna cry🥹";
+       
        break;
-       case 515:
+       case 70:
         no.textContent ='like fr!??!?😨';
+        
        break ;
-       case 585:
-        no.textContent ='100%?!??😓';
+       case 80:
+        no.textContent ='100%?!??😓'
+        crying.style.opacity ='0'
+        h1.style.opacity ='0'
+        no.style.opacity ='0'
+        height=100
+        body.style.backgroundColor = '#68B31B'
+        
+        
        break;
-       case 655:
+       case 90:
         no.textContent = '😭😭';
        break;
-       case 725:
+       case 100:
        no.textContent ='noo!!!😭';
        break;
      
     }
-    yes.style.height = height+ 'px';
-    yes.style.width = width+ 'px';
-    yes.style.fontSize = fonts + 'px';
+    yes.style.height = height+ '%';
+    yes.style.width = width+ '%';
+    yes.style.fontSize = fonts + 'rem';
     normal.style.display ='none'
     crying.style.display ='flex'
     
+    console.log(height)
     
     
     
@@ -145,7 +157,10 @@
    crying.style.display='none'
    normal.style.display='none'
    happy.style.display ='flex'
-   
+   crying.style.opacity = '1'
+   h1.style.opacity = '1'
+   no.style.opacity = '1'
+   body.style.backgroundColor ='#FFCFFB'
     
    
    no.remove()
